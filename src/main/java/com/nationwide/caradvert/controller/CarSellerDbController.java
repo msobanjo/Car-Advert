@@ -8,23 +8,22 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.nationwide.caradvert.entity.admin_details;
-import com.nationwide.caradvert.repository.AdminRepo;
-
+import com.nationwide.caradvert.entity.car_seller_details;
+import com.nationwide.caradvert.repository.CarSellerRepo;
 
 @RestController
-public class AdminDbController {
-
-	@Autowired
-	private AdminRepo repo;
+public class CarSellerDbController {
 	
-	@GetMapping("/showAdminDetails")
-	public ArrayList<admin_details> showall(){
+	@Autowired
+	private CarSellerRepo repo;
+
+	@GetMapping("/showCarSellerDetails")
+	public ArrayList<car_seller_details> showall(){
 		return repo.findAll();
 	}
 	
-	@PostMapping("/saveAdminDetails")
-	public String saveData(@RequestBody admin_details ref){
+	@PostMapping("/saveCarSellerDetails")
+	public String saveData(@RequestBody car_seller_details ref){
 		repo.save(ref);
 		return "saved";
 	}
