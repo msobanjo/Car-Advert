@@ -1,12 +1,15 @@
 package com.nationwide.caradvert.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class car_advert {
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int advertid;
 	private String username;
 	private String[] image;
