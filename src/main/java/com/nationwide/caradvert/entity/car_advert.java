@@ -12,7 +12,7 @@ public class car_advert {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int advertid;
 	private String username;
-	private String[] image;
+	private String image;
 	private String advertdescription;
 	private int price;
 	private String make;
@@ -38,10 +38,10 @@ public class car_advert {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	public String[] getImage() {
+	public String getImage() {
 		return image;
 	}
-	public void setImage(String[] image) {
+	public void setImage(String image) {
 		this.image = image;
 	}
 	public String getAdvertdescription() {
