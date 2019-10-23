@@ -13,4 +13,6 @@ import com.nationwide.caradvert.entity.car_advert;
 public interface CarAdvertRepo extends JpaRepository<car_advert, Integer> {
 	
 	public ArrayList<car_advert> findAll();
+	
+	public void deleteByAdvertid(int advetId);
 }

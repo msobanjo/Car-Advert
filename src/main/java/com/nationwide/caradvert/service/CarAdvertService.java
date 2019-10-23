@@ -21,4 +21,8 @@ public class CarAdvertService {
 	public void saveCarADvertDetails(car_advert ref){
 		repo.save(ref);
 	}
+	
+	public void deleteCarAdvert(int advertId) {
+		repo.deleteByAdvertid(advertId);
+	}
 }

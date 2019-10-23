@@ -30,4 +30,12 @@ public class AdminService {
 		return repo.findUsername(firstName);
 	}
 	
+	public void deleteAdmin(String username) {
+		repo.deleteByUsername(username);
+	}
+	
+	public void updateAdminDetails(admin_details ref){
+		repo.save(ref);
+	}
+	
 }

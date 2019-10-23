@@ -21,4 +21,8 @@ public class CarSellerService {
 	public void saveCarSellerDetails(car_seller_details ref){
 		repo.save(ref);
 	}
+	
+	public void deleteCarSeller(String username) {
+		repo.deleteByUsername(username);
+	}
 }

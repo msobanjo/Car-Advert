@@ -16,6 +16,8 @@ public interface AdminRepo extends JpaRepository<admin_details, Integer>  {
 	public ArrayList<String> findMaxPhoneNumber();
 	
 	public ArrayList<String> findUsername(String firstName);
+	
+	public void deleteByUsername(String username);
 	/*
     @Query("UPDATE admin_details SET emailaddress = " + "'" + "testtest" + "' " + "  WHERE = ")
    public int updateAddress(@Param("companyId") int companyId, @Param("address") String address);

@@ -10,4 +10,6 @@ public interface CarSellerRepo extends JpaRepository<car_seller_details, Integer
 	
 	
 	public ArrayList<car_seller_details> findAll();
+	
+	public void deleteByUsername(String username);
 }
