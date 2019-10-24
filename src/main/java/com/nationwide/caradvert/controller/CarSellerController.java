@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -39,5 +40,11 @@ public class CarSellerController {
 	public String deleteCarSeller(@PathVariable String username) {
 		logic.deleteCarSeller(username);
 		return "Car seller deleted";
+	}
+	
+	@PutMapping("/updateCarSellerDetails")
+	public String updateData(@RequestBody car_seller_details ref){
+		logic.updateCarSellerDetails(ref);
+		return "Car seller details updated";
 	}
 }

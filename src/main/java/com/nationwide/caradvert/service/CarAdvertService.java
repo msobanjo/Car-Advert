@@ -13,16 +13,20 @@ public class CarAdvertService {
 
 	@Autowired
 	private CarAdvertRepo repo;
-	
-	public ArrayList<car_advert> showCarAdvertDetails(){
+
+	public ArrayList<car_advert> showCarAdvertDetails() {
 		return repo.findAll();
 	}
-	
-	public void saveCarADvertDetails(car_advert ref){
+
+	public void saveCarADvertDetails(car_advert ref) {
 		repo.save(ref);
 	}
-	
+
 	public void deleteCarAdvert(int advertId) {
 		repo.deleteByAdvertid(advertId);
+	}
+
+	public void updateCarAdvert(car_advert ref) {
+		repo.save(ref);
 	}
 }
