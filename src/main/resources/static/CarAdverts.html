@@ -20,7 +20,7 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top" onload="request()">
 
    <!-- Navigation -->
   <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
@@ -102,6 +102,11 @@
               </div>
             </div>
             <img class="img-fluid" src="img/portfolio/cabin.png" alt="">
+             <div id = "p1">  </div>
+             <div id = "p2">  </div>
+             <div id = "p3">  </div>
+            
+           
           </div>
         </div>
 
@@ -114,6 +119,7 @@
               </div>
             </div>
             <img class="img-fluid" src="img/portfolio/cake.png" alt="">
+             <div id = "b1">  </div>
           </div>
         </div>
 
@@ -339,7 +345,7 @@
             <div class="row justify-content-center">
               <div class="col-lg-8">
                 <!-- Portfolio Modal - Title -->
-                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Log Cabin</h2>
+                <h2 id="advertTitle" class="portfolio-modal-title text-secondary text-uppercase mb-0"></h2>
                 <!-- Icon Divider -->
                 <div class="divider-custom">
                   <div class="divider-custom-line"></div>
@@ -351,7 +357,14 @@
                 <!-- Portfolio Modal - Image -->
                 <img class="img-fluid rounded mb-5" src="img/portfolio/cabin.png" alt="">
                 <!-- Portfolio Modal - Text -->
-                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                <div id = "description">  </div>
+            	 <div id = "modelVariant">  </div>
+             	<div id = "modelYear">  </div>
+             	<div id = "mileage">  </div>
+            	 <div id = "colour">  </div>
+             	<div id = "engineSize">  </div>
+             	<div id = "gearBox">  </div>
+            	 <div id = "doors">  </div>
                 <button class="btn btn-primary" href="#" data-dismiss="modal">
                   <i class="fas fa-times fa-fw"></i>
                   Close Window
@@ -573,6 +586,7 @@
   <!-- Custom scripts for this template -->
   <script src="js/freelancer.min.js"></script>
 
+	<script src="js/connect.js"></script>
 </body>
 
 </html>
