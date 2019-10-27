@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Registration</title>
+  <title>Update Car Advert</title>
 
   <!-- Custom fonts for this theme -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -22,7 +22,7 @@
 
 <body id="page-top">
 
- <!-- Navigation -->
+  <!-- Navigation -->
   <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
     <div class="container">
       <a class="navbar-brand js-scroll-trigger" href="index.html">Motor Haven</a>
@@ -50,26 +50,53 @@
   </nav>
   
 
-<!-- Masthead -->
+  <!-- Masthead -->
   <header class="masthead bg-primary text-white text-center">
     <div class="container d-flex align-items-center flex-column">
-	<h1 class="jumbotron-heading"> Register</h1>
+	<h1 class="jumbotron-heading"> Update Advert</h1>
 	<br>
      <form method="POST" action="/image" enctype="multipart/form-data">
-          Username: <input size = "50" type="text"
-					class="form-control" id="username" required>
-          Email: <input type="text"
-					class="form-control" id="Email" required>
-		  First Name: <input type="text"
-					class="form-control" id="firstName" required>	
-		  Last Name: <input type="text"
-					class="form-control" id="lastName" required>			
-		  Password: <input type="password"
-					class="form-control" id="pass" required>
-		  Phone number: <input type="text"
-					class="form-control" id="phoneNumber" required>	
+          <br> 
+          Select image: <input type="file" id = "updateImage" name="updateImages" multiple class="btn btn-l btn-outline-light">
+          <br> 
+          <br> 
+          Advert title: <input type="text"
+					class="form-control" id="updateAdvertTitle" required>
+          Make: <input type="text"
+					class="form-control" id="updateMake" required>
+		  Model: <input type="text"
+					class="form-control" id="updateModel" required>
+					
+		  Model variant: <input type="text"
+					class="form-control" id="updateModelVariant" required>	
+		  Model year: <input type="text"
+					class="form-control" id="updateModelYear" required>		
+		  Mileage: <input type="text"
+					class="form-control" id="updateMileage" required>	
+		  Colour: <input type="text"
+					class="form-control" id="updateColour" required>
+		  Engine Size: <input type="text"
+					class="form-control" id="updateEngineSize" required>	
+		  Gearbox: <select class="form-control" id="updateGearbox" required>
+		  					<option value="">--Please choose an option--</option>
+ 							 <option value="Automatic">Automatic</option>
+ 							 <option value="Manual">Manual</option>
+						</select>
+		  Number of doors: <select class="form-control" id="updateDoors" required>
+		  					<option value="">--Please choose an option--</option>
+ 							 <option value="2 doors">2 doors</option>
+ 							 <option value="3 doors">3 doors</option>
+ 							 <option value="4 doors">4 doors</option>
+ 							 <option value="5 doors">5 doors</option>
+ 							 <option value="6 doors">6 doors</option>
+						</select>
+		
+           Enter advert description :  
+        
+          <textarea rows="4" cols="50" type="text" name="updateDetails" class="form-control" id="updateImageDetails"></textarea>
+          </textarea>
           <br>
-             <input type="submit" value="Register" class="btn btn-xl btn-outline-light" id="uploadID" onclick="registrationRequest()">
+             <input type="submit" value="Update Advert" class="btn btn-xl btn-outline-light" id="updateID">
         </form>
 
      <br>
@@ -89,6 +116,8 @@
     </div>
   </header>
  	
+ 
+
 
 
   <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
