@@ -157,6 +157,8 @@
   <!-- Custom scripts for this template -->
   <script src="js/freelancer.min.js"></script>
 <!--"http://"+location.host +":8080"+"/ -->
+
+<script src="js/connect.js"></script>
 	<script> 
 	$( document ).ready(function() {
 		
@@ -218,7 +220,7 @@
                                    "<div id = 'doors'>" + 'Number Of Doors : ' + story.doors + "</div>"+
                           			"<br>"+
                                    
-                                   "<a href='UpdateAdvert.html'>" + "<button class='btn btn-primary' id='updateButton'>" + "Update Advert" + "</button>" + "</a>" + "&nbsp;" + 
+                                   "<a href='UpdateAdvert.html'>" + "<button class='btn btn-primary' onclick='sendAdvertid(this.id)' id='" +story.advertid +"'>" + "Update Advert" + "</button>" + "</a>" + "&nbsp;" + 
                                    "<button type='submit' class='btn btn-primary' onclick='deleteAdvert(this.id)' id='" +story.advertid+ "'>" + "Delete Advert" + "</button>"+
                                    
                                 "</div>"+
@@ -236,8 +238,21 @@
             }
         });
     });
+	
+	function sendAdvertid(advertId) {
+		setAdvertid(advertId);
+	}
+	
+	function updateDiv(advertId){
+
+		  var div=document.createElement("div");
+		  div.name = advertId;
+		  div.id = "updateDiv";
+		  
+		  document.body.appendChild(div);
+		}
 	</script>
-	<script src="js/connect.js"></script>
+	
 </body>
 
 </html>

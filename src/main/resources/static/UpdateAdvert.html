@@ -55,13 +55,15 @@
     <div class="container d-flex align-items-center flex-column">
 	<h1 class="jumbotron-heading"> Update Advert</h1>
 	<br>
-     <form method="POST" action="/image" enctype="multipart/form-data">
+    
           <br> 
           Select image: <input type="file" id = "updateImage" name="updateImages" multiple class="btn btn-l btn-outline-light">
           <br> 
           <br> 
           Advert title: <input type="text"
 					class="form-control" id="updateAdvertTitle" required>
+		 Price: <input type="text"
+					class="form-control" id="updatePrice" required>	
           Make: <input type="text"
 					class="form-control" id="updateMake" required>
 		  Model: <input type="text"
@@ -96,8 +98,8 @@
           <textarea rows="4" cols="50" type="text" name="updateDetails" class="form-control" id="updateImageDetails"></textarea>
           </textarea>
           <br>
-             <input type="submit" value="Update Advert" class="btn btn-xl btn-outline-light" id="updateID">
-        </form>
+             <input type="submit" value="Update Advert" onclick="updateAdvert()" class="btn btn-xl btn-outline-light" id="updateID">
+      <!--  put back form tag -->
 
      <br>
      <br>
@@ -126,7 +128,9 @@
       <i class="fa fa-chevron-up"></i>
     </a>
   </div>
-
+  
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="js/connect.js"></script>
 
 </body>
 

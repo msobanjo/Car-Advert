@@ -107,3 +107,69 @@ function deleteAdvert(advertId){
         }
     });
   }
+
+var rAdvertID = "test";
+
+function setAdvertid(advertId){
+	
+	rAdvertID = advertId;
+	console.log(rAdvertID + "test");
+}
+console.log(rAdvertID);
+
+function updateAdvert() {
+    var image = document.getElementById("updateImage").value;
+    var advertTitle = document.getElementById('updateAdvertTitle').value;
+    var price = document.getElementById("updatePrice").value;
+    var make = document.getElementById('updateMake').value;
+    var model = document.getElementById('updateModel').value;
+    var modelVariant = document.getElementById('updateModelVariant').value;
+    var modelYear = document.getElementById('updateModelYear').value;
+    var mileage = document.getElementById('updateMileage').value;
+    var colour = document.getElementById('updateColour').value;
+    var engineSize = document.getElementById('updateEngineSize').value;
+    var gearbox = document.getElementById('updateGearbox').value;
+    var doors = document.getElementById('updateDoors').value;
+    var advertDescription = document.getElementById('updateImageDetails').value;
+
+    //var advertId = document.getElementById("updateDiv");
+    console.log(rAdvertID + "new");
+
+//    var carAdvert = new Object();
+//    carAdvert.advertid = advertId;
+//    carAdvert.username = "dwdwd";
+//    carAdvert.image = image;
+//    carAdvert.advertdescription = advertDescription;
+//    carAdvert.price = price;
+//    carAdvert.make = make;
+//    carAdvert.model = model;
+//    carAdvert.modelvariant = modelVariant;
+//    carAdvert.modelyear = modelYear;
+//    carAdvert.mileage = mileage;
+//    carAdvert.colour = colour;
+//    carAdvert.engineSize = engineSize;
+//    carAdvert.gearbox = gearbox;
+//    carAdvert.doors = doors;
+//    carAdvert.adverttitle = advertTitle;
+//
+//    var carAdvertJSON = JSON.stringify(carAdvert);
+//    
+//   // alert("Your advert has been updated");
+//   // window.location = window.location;
+//    $.ajax({
+//        type : "PUT",
+//        url : "http://localhost:8080/CarAdvert/updateCarAdvert",
+//        contentType : "application/json",
+//        data : carAdvertJSON,
+//        success : function(data) {
+//            console.log(data);
+//        },
+//        error : function(data) {
+//            console.log(data);
+//        },
+//        dataType : 'json'
+//    });
+ 
+}
+
+
