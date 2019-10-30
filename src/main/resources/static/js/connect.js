@@ -81,7 +81,7 @@ function registrationRequest() {
     window.location = window.location;
     $.ajax({
         type : "POST",
-        url : "http://localhost:8080/CarSeller/saveCarSellerDetails",
+        url : "CarSeller/saveCarSellerDetails",
         contentType : "application/json",
         data : registerJSON,
         success : function(data) {
@@ -100,7 +100,7 @@ function deleteAdvert(advertId){
     alert("Advert has been deleted");
     window.location = window.location;
     $.ajax({
-        url: "http://localhost:8080/CarAdvert/deleteCarAdvert/" + advertId,
+        url: "CarAdvert/deleteCarAdvert/" + advertId,
         type: 'DELETE',
         success: function(result) {
           // can do something with the result 
@@ -158,7 +158,7 @@ function updateAdvert() {
 //   // window.location = window.location;
 //    $.ajax({
 //        type : "PUT",
-//        url : "http://localhost:8080/CarAdvert/updateCarAdvert",
+//        url : "CarAdvert/updateCarAdvert",
 //        contentType : "application/json",
 //        data : carAdvertJSON,
 //        success : function(data) {
