@@ -220,7 +220,7 @@
                                    "<div id = 'doors'>" + 'Number Of Doors : ' + story.doors + "</div>"+
                           			"<br>"+
                                    
-                                   "<a href='UpdateAdvert.html'>" + "<button class='btn btn-primary' onclick='sendAdvertid(this.id)' id='" +story.advertid +"'>" + "Update Advert" + "</button>" + "</a>" + "&nbsp;" + 
+                                    "<button class='btn btn-primary' data-toggle='modal' data-target='#updateModel' onclick='sendAdvertid(this.id)' id='" +story.advertid +"'>" + "Update Advert" + "</button>" + "&nbsp;" + 
                                    "<button type='submit' class='btn btn-primary' onclick='deleteAdvert(this.id)' id='" +story.advertid+ "'>" + "Delete Advert" + "</button>"+
                                    
                                 "</div>"+
@@ -229,7 +229,27 @@
                           "</div>"+
                         "</div>"+
                       "</div>"+
-                    "</div>"
+                    "</div>"+
+                      <!-- Modal -->
+                        "<div class='modal fade' id='updateModel' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'>"+
+                          "<div class='modal-dialog modal-dialog-centered' role='document'>"+
+                            "<div class='modal-content'>"+
+                              "<div class='modal-header'>"+
+                                "<h5 class='modal-title' id='exampleModalLongTitle'>" +  'Modal title' + "</h5>"+
+                                "<button type='button' class='close' data-dismiss='modal' aria-label='Close'>"+
+                                  "<span aria-hidden='true'>" + &times; + "</span>"+
+                                "</button>"+
+                              "</div>"+
+                              "<div class='modal-body'>"+
+                                "..."+
+                              "</div>"+
+                              "<div class='modal-footer'>"+
+                                "<button type="button" class="btn btn-secondary" data-dismiss='modal'>" + "Close" + "</button>"+"
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                         )
                         count++;
                     console.log(count);
