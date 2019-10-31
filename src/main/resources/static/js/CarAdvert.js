@@ -36,7 +36,7 @@ function CarAdvertRequest() {
     window.location = window.location;
     $.ajax({
         type : "POST",
-        url : "http://localhost:8080/CarAdvert/saveCarAdvertDetails",
+        url : "http://34.89.73.180:9001/CarAdvert/saveCarAdvertDetails",
         contentType : "application/json",
         data : carAdvertJSON,
         success : function(data) {
