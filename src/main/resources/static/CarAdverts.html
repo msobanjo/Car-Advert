@@ -101,16 +101,16 @@
         <!-- Footer Social Icons -->
         <div class="col-lg-4 mb-5 mb-lg-0">
           <h4 class="text-uppercase mb-4">Around the Web</h4>
-          <a class="btn btn-outline-light btn-social mx-1" href="#">
+          <a class="btn btn-outline-light btn-social mx-1" href="">
             <i class="fab fa-fw fa-facebook-f"></i>
           </a>
-          <a class="btn btn-outline-light btn-social mx-1" href="#">
+          <a class="btn btn-outline-light btn-social mx-1" href="">
             <i class="fab fa-fw fa-twitter"></i>
           </a>
-          <a class="btn btn-outline-light btn-social mx-1" href="#">
+          <a class="btn btn-outline-light btn-social mx-1" href="">
             <i class="fab fa-fw fa-linkedin-in"></i>
           </a>
-          <a class="btn btn-outline-light btn-social mx-1" href="#">
+          <a class="btn btn-outline-light btn-social mx-1" href="">
             <i class="fab fa-fw fa-dribbble"></i>
           </a>
         </div>
@@ -220,7 +220,7 @@
                                    "<div id = 'doors'>" + 'Number Of Doors : ' + story.doors + "</div>"+
                           			"<br>"+
                                    
-                                    "<button class='btn btn-primary' data-toggle='modal' data-target='#updateModel' onclick='sendAdvertid(this.id)' id='" +story.advertid +"'>" + "Update Advert" + "</button>" + "&nbsp;" + 
+                                    "<button class='btn btn-primary' data-dismiss='modal' onclick='setAdvertid(this.id)' data-toggle='modal' data-target='#updateModel' id='" +story.advertid +"'>" + "Update Advert" + "</button>" + "&nbsp;" + 
                                    "<button type='submit' class='btn btn-primary' onclick='deleteAdvert(this.id)' id='" +story.advertid+ "'>" + "Delete Advert" + "</button>"+
                                    
                                 "</div>"+
@@ -230,26 +230,53 @@
                         "</div>"+
                       "</div>"+
                     "</div>"+
-                      <!-- Modal -->
+                      
                         "<div class='modal fade' id='updateModel' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'>"+
-                          "<div class='modal-dialog modal-dialog-centered' role='document'>"+
+                          "<div class='modal-dialog modal-dialog-scrollable' role='document'>"+
                             "<div class='modal-content'>"+
                               "<div class='modal-header'>"+
-                                "<h5 class='modal-title' id='exampleModalLongTitle'>" +  'Modal title' + "</h5>"+
+                                "<h5 class='modal-title' id='exampleModalLongTitle'>" +  'Update Advert' + "</h5>"+
                                 "<button type='button' class='close' data-dismiss='modal' aria-label='Close'>"+
-                                  "<span aria-hidden='true'>" + &times; + "</span>"+
+                                  "<span aria-hidden='true'>" + "&times;" + "</span>"+
                                 "</button>"+
                               "</div>"+
                               "<div class='modal-body'>"+
-                                "..."+
+                              "Select image:" + "<input type='file' id = 'updateImage' name='updateImages' multiple class='btn btn-l btn-outline-light'>"+
+                              "<br>"+ 
+                              "<br>"+ 
+                              "Advert title:" + "<input type='text' class='form-control' id='updateAdvertTitle' required>"+
+                    		  "Price:" + "<input type='text' class='form-control' id='updatePrice' required>"+	
+                              "Make:" +  "<input type='text' class='form-control' id='updateMake' required>"+
+                    		  "Model:" + "<input type='text' class='form-control' id='updatemodel' required>"+
+                    		  "Model variant:" + "<input type='text' class='form-control' id='updateModelVariant' required>"+
+                    		  "Model year:" + "<input type='text' class='form-control' id='updateModelYear' required>"+
+                    		  "Mileage:" + "<input type='text' class='form-control' id='updateMileage' required>"+
+                    		  "Colour:" + "<input type='text' class='form-control' id='updateColour' required>"+
+                    		  "Engine Size:" + "<input type='text' class='form-control' id='updateEngineSize' required>"+
+                    		  "Gearbox:" + "<select class='form-control' id='updateGearbox' required>"+
+                    		  					"<option value=''>" + "--Please choose an option--" + "</option>"+
+                     							 "<option value='Automatic'>" + "Automatic" + "</option>"+
+                     							 "<option value='Manual'>" + "Manual" + "</option>"+
+                    						"</select>"+
+                    		  "Number of doors:" + "<select class='form-control' id='updateDoors' required>"+
+                    		  					"<option value=''>" + "--Please choose an option--" + "</option>"+
+                     							 "<option value='2 doors'>" + "2 doors" + "</option>"+
+                     							 "<option value='3 doors'>" + "3 doors" + "</option>"+
+                     							 "<option value='4 doors'>" + "4 doors" + "</option>"+
+                     							 "<option value='5 doors'>" + "5 doors" + "</option>"+
+                     							 "<option value='6 doors'>" + "6 doors" + "</option>"+
+                    						"</select>"+
+                               "Enter advert description :"+  
+                              "<textarea rows='4' cols='50' type='text' name='updateDetails' class='form-control' id='updateImageDetails'>"+
+                              "</textarea>"+
                               "</div>"+
                               "<div class='modal-footer'>"+
-                                "<button type="button" class="btn btn-secondary" data-dismiss='modal'>" + "Close" + "</button>"+"
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                                "<button type='button' class='btn btn-secondary' data-dismiss='modal'>" + "Close" + "</button>"+
+                                "<button type='button' class='btn btn-primary' onclick='updateAdvert()' data-dismiss='modal' >" + "Save changes" + "</button>"+
+                              "</div>"+
+                            "</div>"+
+                          "</div>"+
+                        "</div>"
                         )
                         count++;
                     console.log(count);
@@ -259,18 +286,67 @@
         });
     });
 	
-	function sendAdvertid(advertId) {
-		setAdvertid(advertId);
+	 var gAdvertId;
+	 
+	function setAdvertid(advertId) {
+		console.log(advertId);
+		gAdvertId = advertId;
 	}
 	
-	function updateDiv(advertId){
+	function updateAdvert() {
+	    var image = document.getElementById("updateImage").value;
+	    var advertTitle = document.getElementById('updateAdvertTitle').value;
+	    var price = document.getElementById("updatePrice").value;
+	    var make = document.getElementById('updateMake').value;
+	    var model1 = document.getElementById('updatemodel').value;
+	    var modelVariant = document.getElementById('updateModelVariant').value;
+	    var modelYear = document.getElementById('updateModelYear').value;
+	    var mileage = document.getElementById('updateMileage').value;
+	    var colour = document.getElementById('updateColour').value;
+	    var engineSize = document.getElementById('updateEngineSize').value;
+	    var gearbox = document.getElementById('updateGearbox').value;
+	    var doors = document.getElementById('updateDoors').value;
+	    var advertDescription = document.getElementById('updateImageDetails').value;
+	  
 
-		  var div=document.createElement("div");
-		  div.name = advertId;
-		  div.id = "updateDiv";
-		  
-		  document.body.appendChild(div);
-		}
+	    var carAdvert = new Object();
+	    carAdvert.advertid = gAdvertId;
+	    carAdvert.username = "dwdwd";
+	    carAdvert.image = image;
+	    carAdvert.advertdescription = advertDescription;
+	    carAdvert.price = price;
+	    carAdvert.make = make;
+	    carAdvert.model = model1;
+	    carAdvert.modelvariant = modelVariant;
+	    carAdvert.modelyear = modelYear;
+	    carAdvert.mileage = mileage;
+	    carAdvert.colour = colour;
+	    carAdvert.enginesize = engineSize;
+	    carAdvert.gearbox = gearbox;
+	    carAdvert.doors = doors;
+	    carAdvert.adverttitle = advertTitle;
+
+	    var carAdvertJSON = JSON.stringify(carAdvert);
+	    
+	   alert("Your advert has been updated");
+	    window.location = window.location;
+	    $.ajax({
+	        type : "PUT",
+	        url : "CarAdvert/updateCarAdvert",
+	        contentType : "application/json",
+	        data : carAdvertJSON,
+	        success : function(data) {
+	            console.log(data);
+	        },
+	        error : function(data) {
+	            console.log(data);
+	        },
+	        dataType : 'json'
+	    });
+	 
+	}
+
+	
 	</script>
 	
 </body>
