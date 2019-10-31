@@ -55,13 +55,15 @@
     <div class="container d-flex align-items-center flex-column">
 	<h1 class="jumbotron-heading"> Create an advert</h1>
 	<br>
-     <form method="POST" action="/image" enctype="multipart/form-data">
+     <form action="CarAdverts.html">
           <br> 
-          Select image: <input type="file" name="images" multiple class="btn btn-l btn-outline-light">
+          Select image: <input type="file" id = "image" name="images" multiple class="btn btn-l btn-outline-light">
           <br> 
           <br> 
           Advert title: <input type="text"
 					class="form-control" id="advertTitle" required>
+		  Price: <input type="text"
+					class="form-control" id="price" required>			
           Make: <input type="text"
 					class="form-control" id="make" required>
 		  Model: <input type="text"
@@ -93,10 +95,10 @@
 		
            Enter advert description :  
         
-          <textarea rows="4" cols="50" type="text" name="details" class="form-control" id="imageDetails"></textarea>
+          <textarea rows="4" cols="50" type="text" name="details" class="form-control" id="advertDescription"></textarea>
           </textarea>
           <br>
-             <input type="submit" value="Upload Advert" class="btn btn-xl btn-outline-light" id="uploadID">
+             <input type="submit" value="Upload Advert" class="btn btn-xl btn-outline-light" id="uploadID" onclick = "CarAdvertRequest()">
         </form>
 
      <br>
@@ -127,7 +129,8 @@
     </a>
   </div>
 
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="js/CarAdvert.js"></script>
 </body>
 
 </html>

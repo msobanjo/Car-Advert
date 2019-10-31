@@ -14,7 +14,7 @@ public class car_advert {
 	private String username;
 	private String image;
 	private String advertdescription;
-	private int price;
+	private String price;
 	private String make;
 	private String model;
 	private String modelvariant;
@@ -50,10 +50,10 @@ public class car_advert {
 	public void setAdvertdescription(String advertdescription) {
 		this.advertdescription = advertdescription;
 	}
-	public int getPrice() {
+	public String getPrice() {
 		return price;
 	}
-	public void setPrice(int price) {
+	public void setPrice(String price) {
 		this.price = price;
 	}
 	public String getMake() {
