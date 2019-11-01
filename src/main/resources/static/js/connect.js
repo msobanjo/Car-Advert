@@ -20,7 +20,7 @@ function registrationRequest() {
     window.location = window.location;
     $.ajax({
         type : "POST",
-        url : "http://34.89.73.180:9001/CarSeller/saveCarSellerDetails",
+        url : "http://"+location.host+":9001/CarSeller/saveCarSellerDetails",
         contentType : "application/json",
         data : registerJSON,
         success : function(data) {
@@ -39,7 +39,7 @@ function deleteAdvert(advertId){
     alert("Advert has been deleted");
     window.location = window.location;
     $.ajax({
-        url: "http://34.89.73.180:9001/CarAdvert/deleteCarAdvert/" + advertId,
+        url: "http://"+location.host+":9001/CarAdvert/deleteCarAdvert/" + advertId,
         type: 'DELETE',
         success: function(result) {
           // can do something with the result 

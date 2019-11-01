@@ -124,7 +124,7 @@
 		
         $.ajax({
             type : "GET",
-            url : "http://34.89.73.180:9001/CarAdvert/showCarAdvertDetails",
+            url : "http://"+location.host+":9001/CarAdvert/showCarAdvertDetails",
             success : function(data) {
                 console.log("success")
                 var count = 1;
@@ -291,7 +291,7 @@
 	    window.location = window.location;
 	    $.ajax({
 	        type : "PUT",
-	        url : "http://34.89.73.180:9001/CarAdvert/updateCarAdvert",
+	        url : "http://"+location.host+":9001/CarAdvert/updateCarAdvert",
 	        contentType : "application/json",
 	        data : carAdvertJSON,
 	        success : function(data) {
