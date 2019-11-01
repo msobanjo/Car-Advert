@@ -291,7 +291,7 @@
 	    window.location = window.location;
 	    $.ajax({
 	        type : "PUT",
-	        url : "http://"+location.host+":9001/CarAdvert/updateCarAdvert",
+	        url : "http://"+location.hostname+":9001/CarAdvert/updateCarAdvert",
 	        contentType : "application/json",
 	        data : carAdvertJSON,
 	        success : function(data) {
