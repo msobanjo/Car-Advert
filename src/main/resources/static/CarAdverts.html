@@ -124,7 +124,7 @@
 		
         $.ajax({
             type : "GET",
-            url : "http://"+location.host+":9001/CarAdvert/showCarAdvertDetails",
+            url : "http://"+location.hostname+":9001/CarAdvert/showCarAdvertDetails",
             success : function(data) {
                 console.log("success")
                 var count = 1;
