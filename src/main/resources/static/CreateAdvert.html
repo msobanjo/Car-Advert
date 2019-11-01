@@ -55,7 +55,7 @@
     <div class="container d-flex align-items-center flex-column">
 	<h1 class="jumbotron-heading"> Create an advert</h1>
 	<br>
-     <form action="#">
+     <form action="#" method="POST" onsubmit="return CarAdvertRequest()">
           <br> 
           Image: <input type="text" id = "image" name="images" class="form-control"> 
           Advert title: <input type="text"
@@ -96,7 +96,7 @@
           <textarea rows="4" cols="50" type="text" name="details" class="form-control" id="advertDescription"></textarea>
           </textarea>
           <br>
-             <input type="submit" value="Upload Advert" class="btn btn-xl btn-outline-light" id="uploadID" onclick = "return CarAdvertRequest()">
+             <input type="submit" value="Upload Advert" class="btn btn-xl btn-outline-light" id="uploadID">
         </form>
 
      <br>
