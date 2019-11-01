@@ -48,4 +48,5 @@ function CarAdvertRequest() {
         dataType : 'json'
     });
  
+    return false;
 }
