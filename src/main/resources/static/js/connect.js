@@ -35,7 +35,6 @@ function registrationRequest() {
 }
 
 function deleteAdvert(advertId){
-	console.log(advertId);
     alert("Advert has been deleted");
     window.location = window.location;
     $.ajax({
@@ -69,7 +68,7 @@ function deleteAdvert(advertId){
 	    var doors = document.getElementById('updateDoors' + count).value;
 	    var advertDescription = document.getElementById('updateImageDetails' + count).value;
 	  
-        console.log(gAdvertId + " going on")
+        
 	    var carAdvert = new Object();
 	    carAdvert.advertid = gAdvertId;
 	    carAdvert.username = "dwdwd";

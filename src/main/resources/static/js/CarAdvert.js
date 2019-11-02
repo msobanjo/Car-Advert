@@ -32,7 +32,6 @@ function CarAdvertRequest() {
 
     var carAdvertJSON = JSON.stringify(carAdvert);
     
-    console.log("hi")
     alert("Your advert has been created");
     let request = new XMLHttpRequest();
     request.open("POST", "http://"+location.hostname+":9001/CarAdvert/saveCarAdvertDetails");
