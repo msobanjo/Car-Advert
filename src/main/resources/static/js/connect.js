@@ -167,10 +167,10 @@ function deleteAdvert(advertId) {
 		url: "http://" + location.hostname + ":9001/CarAdvert/deleteCarAdvert/" + advertId,
 		type: 'DELETE',
 		success: function (result) {
-			renderCars(); 
+			window.location = window.location;
 		},
 		error: function (data) {
-			renderCars();
+			window.location = window.location;
 		}
 	});
 }
