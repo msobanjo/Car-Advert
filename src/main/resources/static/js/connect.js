@@ -89,7 +89,7 @@ function deleteAdvert(advertId){
 	    var carAdvertJSON = JSON.stringify(carAdvert);
 	    
 	   alert("Your advert has been updated");
-	    window.location = window.location;
+	  
 	    $.ajax({
 	        type : "PUT",
 	        url : "http://"+location.hostname+":9001/CarAdvert/updateCarAdvert",
