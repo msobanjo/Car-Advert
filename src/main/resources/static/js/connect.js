@@ -1,11 +1,12 @@
 function renderCars() {
+	console.log("rendering...");
+	document.getElementById("dynamicLoad").innerHTML="";
 	$.ajax({
 		type: "GET",
 		url: "http://" + location.hostname + ":9001/CarAdvert/showCarAdvertDetails",
 		success: function (data) {
 			console.log("success")
 			var count = 1;
-			document.getElementById("dynamicLoad").innerHTML="";
 			$.each(data, function (index, story) {
 				$('#dynamicLoad').prepend(
 					"<div class='col-md-6 col-lg-4'>" +
@@ -153,7 +154,7 @@ function registrationRequest() {
 			renderCars();
 		},
 		error: function (data) {
-			console.log(data);
+			renderCars();
 		},
 		dataType: 'json'
 	});
@@ -167,6 +168,9 @@ function deleteAdvert(advertId) {
 		type: 'DELETE',
 		success: function (result) {
 			renderCars(); 
+		},
+		error: function (data) {
+			renderCars();
 		}
 	});
 }
@@ -224,7 +228,7 @@ function updateAdvert(count) {
 			renderCars();
 		},
 		error: function (data) {
-			console.log(data);
+			renderCars();
 		},
 		dataType: 'json'
 	});
